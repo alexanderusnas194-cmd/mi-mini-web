@@ -1,0 +1,333 @@
+/* ---------- styles.css (optimizado) ---------- */
+
+/* Reset básico */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+/* ---------- Base ---------- */
+body {
+  background: #d6d8e0;
+  color: #030338;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;          /* recomendado: 16px para accesibilidad */
+  line-height: 1.5;
+  margin: 30px;
+}
+
+/* ---------- Navegación (Día 11) ---------- */
+nav {
+  background: #0b3d91;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.nav-brand {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(255,255,255,0.12);
+}
+
+/* Mobile: mostrar toggle y ocultar links */
+@media (max-width: 700px) {
+  .nav-toggle { display: block; }
+  .nav-links { display: none; width: 100%; flex-direction: column; gap: 8px; margin-top: 8px; }
+  .nav-links.show { display: flex; }
+  .nav-container { flex-direction: column; align-items: stretch; }
+}
+
+/* ---------- Títulos y textos ---------- */
+h1 {
+  font-size: 2.4rem;
+  color: #0b3d91;
+  text-align: center;
+  margin-bottom: 10px;
+}
+h2 {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  color: #333;
+}
+p {
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ---------- Secciones ---------- */
+.encabezado {
+  max-width: 750px;
+  margin: 0 auto 40px auto;
+  padding: 10px;               /* corregido: px */
+  background-color: #c4d0e3;
+  border: 2px solid #176f31;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  transition: transform 0.18s ease;
+}
+.encabezado:hover { transform: translateY(-3px); }
+
+.sobre-mi {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #f0f4f2;   /* paleta más suave para legibilidad */
+  border: 1px solid #d6dadd;
+  border-radius: 14px;
+}
+
+.link {
+  max-width: 520px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #edf3ee;
+  border: 1px solid #cdd8d0;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contacto {
+  background-color: #fff8f9;
+  border: 1px solid #dcd7e0;
+  margin: 20px auto;
+  padding: 26px;
+  max-width: 700px;
+  border-radius: 14px;
+}
+
+/* Encabezado dentro del bloque contacto */
+.encabezadoD {
+  max-width: 520px;
+  margin: 0 auto 18px auto;
+  text-align: center;
+}
+
+/* ---------- Formulario ---------- */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+/* Botón */
+button {
+  display: block;
+  background: linear-gradient(135deg, #1e8f3e, #146d2b);
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 auto;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(20,100,40,0.15);
+}
+
+/* ---------- Tabla ---------- */
+.table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 16px auto;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.table th,
+.table td {
+  border: 1px solid #e1e6ef;
+  padding: 10px 12px;
+  text-align: center;
+}
+.table th {
+  background: #0b3d91;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+.table tr:nth-child(even) {
+  background: #f6f9ff;
+}
+.table tr:hover {
+  background: #e9f2ff;
+}
+.table td {
+  color: #222;
+}
+
+/* ---------- Enlaces ---------- */
+a {
+  color: #0b3d91;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ---------- Pequeños ajustes globales ---------- */
+img { 
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 12px auto; 
+  border-radius: 8px; }
+
+/* NAVBAR */
+.navbar {
+  background-color: #0b3d91; /* Azul oscuro */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  background-color: #176f31; /* verde al pasar el mouse */
+}
+
+fig.portada, .fig-portada { 
+  text-align: center; 
+  margin: 14px 0; 
+}
+.imagen-redonda {
+  display: block;
+  margin: 10px auto;
+  width: 200;        /* ajusta según necesites */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px; /* cambia a 50% si quieres circular */
+  border: 4px solid rgba(11,61,145,0.9);
+  box-shadow: 0 6px 18px rgba(3,3,56,0.12);
+}
+.fig-caption {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 6px;
+}
+.social { text-align: center; margin: 16px 0; }
+.social a {
+  display: inline-block;
+  margin: 6px;
+  padding: 8px 12px;
+  background: #0b3d91;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.12s, background 0.12s;
+}
+.social a:hover {
+  background: #176f31;
+  transform: translateY(-3px);
+}
+.video-wrapper { 
+  max-width: 900px; 
+  margin: 18px auto; 
+  padding: 0 12px;
+}
+.video-inner { 
+  position: relative; 
+  padding-bottom: 56.25%; 
+  height: 0; overflow: hidden; 
+  border-radius: 12px; 
+  box-shadow: 0 6px 18px rgba(3,3,56,0.08); 
+}
+.video-inner iframe { 
+  position: absolute; 
+  top:0; left:0; 
+  width:100%; 
+  height:100%; 
+  border:0; 
+}
+.audio { 
+  text-align: center; 
+  margin: 18px auto; 
+  max-width: 700px; 
+}
+.audio audio { 
+  width: 100%; 
+  max-width: 600px; 
+  outline: none; 
+}
+
+

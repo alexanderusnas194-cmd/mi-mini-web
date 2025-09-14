@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Reto_10</title>
+</head>
+<body>
+    <!-- Navegación (coloca esto al inicio del <body>) -->
+<nav>
+  <div class="nav-container">
+    <a href="../retoDia10/reto-dia10.html" class="nav-brand">Mi Mini Web</a>
+
+    <!-- Botón visible en móvil -->
+    <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+
+    <ul class="nav-links">
+      <li><a href="../retoDia10/reto-dia10.html">Inicio</a></li>
+      <li><a href="../retoDia10/biografia/index.html" target="_blank">Biografía</a></li>
+      <li><a href="reto-dia10.html">Reto</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="encabezado">
+        <h1>MI PRIMERA MINI WEB</h1>
+       
+        <p>
+            Bienvenido chat GPT a mi página de retroalimentación hasta el día 10. En la página encontraras lo relacionado con lo que he aprendido 
+            desde el día uno, hasta el día 10. Espero que puedas corregirme y realizar una crictica para que pueda mejorar y convertirme en un 
+            progamador y un ingeniero de sistemas de máximo nivel capacitado para crear cualquier cosa que mi imaginacion pueda ofrecerme.
+        </p>
+
+         <!-- Imagen de portada (encabezado) -->
+        <figure class="fig-portada">
+        <img src="../retoDia10/img/cap.jpg" alt="Foto de portada de mi mini web" class="imagen-redonda" loading="lazy">
+        <figcaption class="fig-caption">Mi mini web — día 10</figcaption>
+        </figure>
+
+     
+    </div>
+    <hr>
+    <div class="sobre-mi">
+        <div class="video-wrapper">
+        <div class="video-inner">
+            <iframe src="https://www.youtube.com/embed/dbK8oiPIcPo"
+                    title="Video ejemplo"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+        </div>
+
+        <h2>Tres metas de este año:</h2>
+        <ol>
+            <li>Ser el mejor programador</li>
+            <li>Ser mas discipinado</li>
+            <li>Conseguir empleo en el campo de la tecnologia haciendo lo que me apasiona</li>
+        </ol>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ASIGNATURA</th>
+                    <th>DÍA</th>
+                    <th>HORA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Matématicas</td>
+                    <td>Lunes</td>
+                    <td>7:00 AM</td>
+                </tr>
+                <tr>
+                    <td>Recreo</td>
+                    <td>Lunes</td>
+                    <td>9:30 AM</td>
+                </tr>
+                <tr>
+                    <td>Inglés</td>
+                    <td>Lunes</td>
+                    <td>10:00 AM</td>
+                </tr>
+                <tr>
+                    <td>Almuerzo</td>
+                    <td>Lunes</td>
+                    <td>12:30 PM</td>
+                </tr>
+                <tr>
+                    <td>Biología</td>
+                    <td>Lunes</td>
+                    <td>1:00 PM</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p class="link">
+            Visita <a href="../retoDia10/biografia/index.html" target="_blank">Mi biografia</a>para mas información 
+            <br>
+            visita <a href="../retoDia10/biografia/biografia.html" target="_blank">Mi segunda Biografia</a> para mas información
+        </p>
+
+        <div class="social">
+            <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Ir a GitHub">🐙 GitHub</a>
+            <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Ir a LinkedIn">💼 LinkedIn</a>
+            <a href="mailto:tuemail@ejemplo.com" aria-label="Enviar correo">✉️ Email</a>
+        </div>
+
+    </div>
+    <hr>
+    <div class="contacto" id="contacto">
+        <div class="encabezadoD">
+            <h2>CONTACTO</h2>
+            <b>Complete el siguiente formulario para contactarme</b>
+        </div>
+       <div class="formularioD">
+        <form action="#">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre aqui" required>
+            <br><br>
+            <label for="correo">Correo:</label>
+            <input type="email" name="correo" id="correo" placeholder="ejemplo@correo.com" required>
+            <br><br>
+            <label for="mensaje">Mensaje:</label>
+            <textarea name="mensaje" id="mensaje" placeholder="ingresa un mensaje" rows="4" cols="30" required></textarea>
+            <br><br>
+            <label>
+                <input type="checkbox" name="terminos" id="terminos"> Acepto los términos y condiciones
+            </label>
+            <br><br>
+            <button type="submit">Enviar</button>
+        </form>
+       </div>
+       <div class="audio">
+            <h3>Audio</h3>
+            <audio controls preload="none">
+                <source src="../retoDia10/audio/videoplayback.weba"audio/mpeg">
+                Tu navegador no soporta el reproductor de audio.
+            </audio>
+        </div>
+    </div>
+        <script>
+        function toggleMenu() {
+            const links = document.querySelector('.nav-links');
+            if (links) links.classList.toggle('show');
+        }
+
+        // (Opcional) marcar el link activo según la URL
+        document.addEventListener('DOMContentLoaded', () => {
+            const enlaces = document.querySelectorAll('.nav-links a');
+            enlaces.forEach(a => {
+            if (location.pathname.endsWith(a.getAttribute('href')) || location.href.includes(a.getAttribute('href'))) {
+                a.classList.add('active');
+            }
+            });
+        });
+    </script>
+
+</body>
+</html>
