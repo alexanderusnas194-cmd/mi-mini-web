@@ -385,5 +385,71 @@ fig.portada, .fig-portada {
   }
 }
 
+/* 🌐 Diseño Responsive - Día 11 */
+@media (max-width: 768px) {
+  body {
+    font-size: 18px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  input, textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .encabezado, .sobre-mi, .link, .contacto {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  table {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  iframe {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+/* 📱 Aún más pequeño (teléfonos muy chicos) */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  iframe {
+    height: 200px;
+  }
+}
+
 
 
