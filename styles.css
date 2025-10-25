@@ -330,4 +330,60 @@ fig.portada, .fig-portada {
   outline: none; 
 }
 
+/* ======= Diseño Responsive ======= */
+
+/* Para pantallas de tablets o menores */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  header, nav, section, footer {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  p {
+    text-align: justify;
+    line-height: 1.5;
+  }
+}
+
+/* Para pantallas de celular pequeñas */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.9em;
+  }
+}
+
+
 
