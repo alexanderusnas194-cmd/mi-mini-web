@@ -209,8 +209,12 @@
          window.addEventListener("scroll", revealElements);
     </script>
 
-    <!-- 🔝 Botón flotante para volver arriba -->
-    <button id="btnSubir" onclick="subirArriba()">↑</button>
+    <!-- 🔝 Botón flotante moderno -->
+    <button id="btnSubir" aria-label="Subir al inicio">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="white">
+        <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+    </svg>
+    </button>
 
     <script>
   // 🔝 Mostrar/Ocultar botón al hacer scroll
