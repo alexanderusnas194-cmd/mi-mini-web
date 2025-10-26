@@ -8,21 +8,20 @@
     <title>Reto_10</title>
 </head>
 <body>
-    <!-- Navegación (coloca esto al inicio del <body>) -->
-<nav>
-  <div class="nav-container">
-    <a href="../retoDia10/reto-dia10.html" class="nav-brand">Mi Mini Web</a>
+  <!-- 🌐 Navegación principal -->
+<nav class="nav-container">
+  <a href="../retoDia10/reto-dia10.html" class="nav-brand">Mi Mini Web</a>
 
-    <!-- Botón visible en móvil -->
-    <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+  <!-- Botón visible solo en móviles -->
+  <button class="nav-toggle" id="menu-btn" aria-label="Abrir menú">☰</button>
 
-    <ul class="nav-links">
-      <li><a href="../retoDia10/reto-dia10.html">Inicio</a></li>
-      <li><a href="../retoDia10/biografia/index.html" target="_blank">Biografía</a></li>
-      <li><a href="reto-dia10.html">Reto</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </div>
+  <!-- Lista de enlaces -->
+  <ul class="nav-links" id="nav-menu">
+    <li><a href="../retoDia10/reto-dia10.html">Inicio</a></li>
+    <li><a href="../retoDia10/biografia/index.html" target="_blank">Biografía</a></li>
+    <li><a href="reto-dia10.html">Reto</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
 </nav>
 
     <div class="encabezado">
@@ -159,6 +158,14 @@
             });
         });
     </script>
+    <script>
+  const menuBtn = document.getElementById("menu-btn");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
 
 </body>
 </html>
