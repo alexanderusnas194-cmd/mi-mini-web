@@ -181,13 +181,34 @@
         });
     </script>
     <script>
-  const menuBtn = document.getElementById("menu-btn");
-  const navMenu = document.getElementById("nav-menu");
+        const menuBtn = document.getElementById("menu-btn");
+        const navMenu = document.getElementById("nav-menu");
 
-  menuBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-  });
-</script>
+        menuBtn.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    </script>
+
+    <script>
+    // Efecto scroll reveal
+    function revealElements() {
+        const elements = document.querySelectorAll(".reveal");
+        for (let i = 0; i < elements.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = elements[i].getBoundingClientRect().top;
+        const visiblePoint = 100;
+
+        if (elementTop < windowHeight - visiblePoint) {
+            elements[i].classList.add("active");
+        } else {
+            elements[i].classList.remove("active");
+        }
+        }
+    }
+
+         window.addEventListener("scroll", revealElements);
+    </script>
+
 
 </body>
 </html>
