@@ -209,6 +209,30 @@
          window.addEventListener("scroll", revealElements);
     </script>
 
+    <!-- 🔝 Botón flotante para volver arriba -->
+    <button id="btnSubir" onclick="subirArriba()">↑</button>
+
+    <script>
+  // 🔝 Mostrar/Ocultar botón al hacer scroll
+  const btnSubir = document.getElementById("btnSubir");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      btnSubir.classList.add("mostrar");
+    } else {
+      btnSubir.classList.remove("mostrar");
+    }
+  });
+
+  // 🔼 Función para volver arriba suavemente
+  function subirArriba() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
 
 </body>
 </html>

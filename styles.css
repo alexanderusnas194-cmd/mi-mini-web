@@ -587,5 +587,35 @@ fig.portada, .fig-portada {
   transform: translateY(0);
 }
 
+/* 🔝 Botón Flotante “Subir” */
+#btnSubir {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+}
+
+#btnSubir.mostrar {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#btnSubir:hover {
+  background-color: #0b3d91;
+  transform: scale(1.1);
+}
+
 
 
