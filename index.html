@@ -30,6 +30,9 @@
     <!-- tu nav -->
     <nav class="nav-container" role="navigation" aria-label="Menú principal">
       <!-- nav-brand, botón, nav-links -->
+
+      <button id="themeToggle" aria-label="Cambiar tema" class="theme-toggle" type="button">🌓</button>
+
     </nav>
   </header>
 
@@ -346,8 +349,7 @@
   })();
 </script>
 
-
-    <script>
+<script>
   (function() {
     const cards = document.querySelectorAll('.cards-grid .card');
     cards.forEach((c, i) => {
@@ -356,6 +358,21 @@
   })();
 </script>
 
+<script>
+  (function() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    // lee preferencia previa
+    const saved = localStorage.getItem('theme') || 'dark';
+    if (saved === 'light') document.body.classList.add('light');
+
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      const isLight = document.body.classList.contains('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  })();
+</script>
 
 
 </body>

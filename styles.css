@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+:root { --bg: #120341; --text: #222; }
+body.light { --bg: #f7f9fc; --text: #222; }
+body { background: var(--bg); color: var(--text); transition: background .25s ease, color .25s ease; }
+
 
 /* ---------- RESET BÁSICO ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -336,5 +340,15 @@ button:hover {
   box-shadow: 0 18px 40px rgba(3,3,56,0.12);
   transition: all 0.3s;
   pointer-events: none;
+}
+
+input, textarea, button {
+  transition: box-shadow 0.18s ease, transform 0.12s ease, border-color 0.12s ease;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 6px 18px rgba(11,61,145,0.12);
+  border-color: var(--color-principal);
+  outline: none;
 }
 
