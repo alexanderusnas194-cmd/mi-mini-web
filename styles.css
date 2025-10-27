@@ -737,4 +737,65 @@ h2::before {
   border-radius: 3px;
 }
 
+.card {
+  transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease;
+}
+.card:hover {
+  transform: translateY(-8px) rotate(-0.6deg);
+  box-shadow: 0 14px 30px rgba(3,3,56,0.12);
+}
+
+:root{
+  --min-font: 16px;
+  --max-font: 20px;
+}
+
+/* body font-size responsive */
+body {
+  font-size: clamp(15px, 1.6vw, 18px);
+}
+
+/* h1 responsive */
+h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 24px;
+}
+
+/* tablet */
+@media (max-width: 992px) {
+  .cards-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* móvil */
+@media (max-width: 600px) {
+  .cards-section {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+.form-row .col {
+  flex: 1;
+}
+
+/* en móvil col apila */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+
 
