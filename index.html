@@ -9,6 +9,23 @@
 </head>
 <body>
 
+    <nav> ... 
+  <ul class="nav-links" id="nav-menu">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="inicio"> ... </section>
+  <section id="proyectos"> ... </section>
+  <section id="sobre-mi"> ... </section>
+  <section id="contacto"> ... </section>
+</main>
+
+
     <header>
     <!-- tu nav -->
     <nav class="nav-container" role="navigation" aria-label="Menú principal">
@@ -309,6 +326,21 @@
     });
   })();
 </script>
+
+<script>
+  (function() {
+    const navMenu = document.getElementById('nav-menu');
+    if (!navMenu) return;
+    navMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        const menuBtn = document.getElementById('menu-btn');
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
 
 </body>
 </html>
