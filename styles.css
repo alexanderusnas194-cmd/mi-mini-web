@@ -4,7 +4,7 @@ html, body { height: 100%; }
 
 /* ---------- BASE ---------- */
 :root {
-  --color-principal: #0b3d91;
+  --color-principal: #0b3c91a1;
   --color-secundario: #1e8f3e;
   --color-texto: #333;
   --color-fondo: #f7f9fc;

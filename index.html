@@ -9,6 +9,35 @@
 </head>
 <body>
 
+    <header>
+    <!-- tu nav -->
+    <nav class="nav-container" role="navigation" aria-label="Menú principal">
+      <!-- nav-brand, botón, nav-links -->
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" role="region" aria-labelledby="hero-title">
+      <h1 id="hero-title">Bienvenido a Mi Mini Web</h1>
+      <p>Explora mis proyectos y retos diarios 🚀</p>
+    </section>
+
+    <!-- Proyectos / cards-grid -->
+    <section class="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Proyectos</h2>
+      <!-- pega aquí la .cards-grid -->
+    </section>
+
+    <!-- Sobre mi, contacto, etc. -->
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner" style="text-align:center; padding:16px;">
+      <p>© 2025 Alexander Trochez — Hecho con 🧠 y ☕</p>
+    </div>
+  </footer>
+
   <!-- 🌐 Navegación principal -->
   <nav class="nav-container">
     <!-- Logo SVG + marca -->
@@ -264,6 +293,22 @@
       });
     }
   </script>
+
+  <script>
+  (function() {
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    if (!menuBtn || !navMenu) return;
+
+    menuBtn.setAttribute('aria-expanded', 'false');
+
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      navMenu.classList.toggle('active');
+    });
+  })();
+</script>
 
 </body>
 </html>
