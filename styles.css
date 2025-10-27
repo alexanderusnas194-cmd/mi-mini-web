@@ -695,6 +695,46 @@ fig.portada, .fig-portada {
   100% { transform: translate(100%, 100%); }
 }
 
+/* Botón primario */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg,#1e8f3e,#146d2b);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
 
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(20,100,40,0.18);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn:focus {
+  outline: 3px solid rgba(30,143,62,0.25);
+  outline-offset: 3px;
+}
+
+.cards-section .card:nth-child(1) { border-top: 4px solid #0b3d91; }
+.cards-section .card:nth-child(2) { border-top: 4px solid #1e8f3e; }
+.cards-section .card:nth-child(3) { border-top: 4px solid #ff8a00; }
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 6px;
+  background: linear-gradient(90deg,#0b3d91,#1e8f3e);
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 3px;
+}
 
 
