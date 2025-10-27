@@ -6,7 +6,7 @@ html, body { height: 100%; }
 
 /* ---------- Base ---------- */
 body {
-  background: #d6d8e0;
+  background: #120341;
   color: #030338;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;          /* recomendado: 16px para accesibilidad */
@@ -30,7 +30,7 @@ nav {
   gap: 12px;
 }
 .nav-brand {
-  color: #fff;
+  color: #ffffff18;
   font-weight: 700;
   text-decoration: none;
   font-size: 1.05rem;
@@ -39,7 +39,7 @@ nav {
   display: none;
   background: none;
   border: none;
-  color: #fff;
+  color: #ffffff02;
   font-size: 1.4rem;
   cursor: pointer;
 }
@@ -106,7 +106,7 @@ p {
   max-width: 700px;
   margin: 20px auto;
   padding: 24px;
-  background-color: #f0f4f2;   /* paleta más suave para legibilidad */
+  background-color: #f0f4f2a2;   /* paleta más suave para legibilidad */
   border: 1px solid #d6dadd;
   border-radius: 14px;
 }
@@ -122,7 +122,7 @@ p {
 }
 
 .contacto {
-  background-color: #fff8f9;
+  background-color: #fff8f9a1;
   border: 1px solid #dcd7e0;
   margin: 20px auto;
   padding: 26px;
@@ -194,7 +194,7 @@ button:hover {
   width: 90%;
   border-collapse: collapse;
   margin: 16px auto;
-  background: #fff;
+  background: #ffffff93;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -237,7 +237,7 @@ img {
 
 /* NAVBAR */
 .navbar {
-  background-color: #0b3d91; /* Azul oscuro */
+  background-color: #0b3c9157; /* Azul oscuro */
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -524,15 +524,34 @@ fig.portada, .fig-portada {
   }
 }
 
-/* 🌅 Hero Section */
+/* styles.css (añadir o reemplazar en la sección hero) */
 .hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #0b3d91, #1e90ff);
+  position: relative;
   color: white;
-  border-radius: 15px;
-  margin-bottom: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background-image: url('img/hero-1200.jpg'); /* imagen grande por defecto */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+/* overlay oscuro para que el texto destaque */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3,3,56,0.35), rgba(3,3,56,0.55));
+  z-index: 0;
+}
+.hero > * { position: relative; z-index: 1; }
+
 
 /* ✨ Fade-in Animation */
 .fade-in {
