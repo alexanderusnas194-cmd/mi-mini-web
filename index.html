@@ -1,272 +1,263 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="../retoDia10/favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Reto_10</title>
-
-    <a href="index.html" class="nav-brand" aria-label="Ir al inicio">
-  <!-- SVG simple con iniciales AT -->
-  <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
-    <circle cx="50" cy="50" r="48" fill="#0b3d91"/>
-    <text x="50%" y="55%" text-anchor="middle" fill="#fff" font-size="48" font-family="Poppins, Arial" font-weight="700">AT</text>
-  </svg>
-  <span style="margin-left:8px; color:white; font-weight:700;">Mi Mini Web</span>
-</a>
-
-
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- ajusta si tu favicon está en otra carpeta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Reto_10 - Mi Mini Web</title>
 </head>
 <body>
-    <!-- 🌐 Navegación principal -->
-    <nav class="nav-container">
-    <a href="../retoDia10/reto-dia10.html" class="nav-brand">Mi Mini Web</a>
+
+  <!-- 🌐 Navegación principal -->
+  <nav class="nav-container">
+    <!-- Logo SVG + marca -->
+    <a href="index.html" class="nav-brand" aria-label="Ir al inicio">
+      <svg width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+        <circle cx="50" cy="50" r="48" fill="#0b3d91"/>
+        <text x="50%" y="55%" text-anchor="middle" fill="#fff" font-size="48" font-family="Poppins, Arial" font-weight="700">AT</text>
+      </svg>
+      <span style="margin-left:8px; color:white; font-weight:700;">Mi Mini Web</span>
+    </a>
 
     <!-- Botón visible solo en móviles -->
-    <button class="nav-toggle" id="menu-btn" aria-label="Abrir menú">☰</button>
+    <button class="nav-toggle" id="menu-btn" aria-label="Abrir menú" type="button">☰</button>
 
     <!-- Lista de enlaces -->
     <ul class="nav-links" id="nav-menu">
-        <li><a href="../retoDia10/reto-dia10.html">Inicio</a></li>
-        <li><a href="../retoDia10/biografia/index.html" target="_blank">Biografía</a></li>
-        <li><a href="reto-dia10.html">Reto</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="biografia/index.html" target="_blank" rel="noopener">Biografía</a></li>
+      <li><a href="reto-dia10.html">Reto</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
-    </nav>
+  </nav>
 
+  <!-- Hero -->
+  <section class="hero">
+    <h1 class="fade-in">Bienvenido a Mi Mini Web</h1>
+    <p class="fade-in delay">Explora mis proyectos y retos diarios 🚀</p>
+  </section>
 
-
-    <section class="hero">
-        <h1 class="fade-in">Bienvenido a Mi Mini Web</h1>
-        <p class="fade-in delay">Explora mis proyectos y retos diarios 🚀</p>
-    </section>
-
-    <section class="cards-section">
+  <!-- Tarjetas -->
+  <section class="cards-section">
     <div class="card reveal">
-        <h2>Proyecto 1</h2>
-        <p>Aprendiendo HTML y CSS paso a paso.</p>
-    </div>
-    <div class="card reveal">
-        <h2>Proyecto 2</h2>
-        <p>Diseño responsive y menú hamburguesa.</p>
+      <h2>Proyecto 1</h2>
+      <p>Aprendiendo HTML y CSS paso a paso.</p>
     </div>
     <div class="card reveal">
-        <h2>Proyecto 3</h2>
-        <p>Animaciones y efectos visuales modernos.</p>
+      <h2>Proyecto 2</h2>
+      <p>Diseño responsive y menú hamburguesa.</p>
     </div>
-    </section>
-
-
-
-
-
-    <div class="encabezado">
-        <h1>MI PRIMERA MINI WEB</h1>
-       
-        <p>
-            Bienvenido chat GPT a mi página de retroalimentación hasta el día 10. En la página encontraras lo relacionado con lo que he aprendido 
-            desde el día uno, hasta el día 10. Espero que puedas corregirme y realizar una crictica para que pueda mejorar y convertirme en un 
-            progamador y un ingeniero de sistemas de máximo nivel capacitado para crear cualquier cosa que mi imaginacion pueda ofrecerme.
-        </p>
-
-         <!-- Imagen de portada (encabezado) -->
-        <figure class="fig-portada">
-        <img src="cap.jpg" alt="Foto de portada de mi mini web" class="imagen-redonda" loading="lazy">
-        <figcaption class="fig-caption">Mi mini web — día 10</figcaption>
-        </figure>
-
-     
+    <div class="card reveal">
+      <h2>Proyecto 3</h2>
+      <p>Animaciones y efectos visuales modernos.</p>
     </div>
+  </section>
 
+  <!-- Encabezado / Biografía corta -->
+  <div class="encabezado">
+    <h1>MI PRIMERA MINI WEB</h1>
+    <p>
+      Bienvenido chat GPT a mi página de retroalimentación hasta el día 10. En la página encontrarás lo relacionado con lo que he aprendido 
+      desde el día uno, hasta el día 10. Espero que puedas corregirme y realizar una crítica para que pueda mejorar y convertirme en un 
+      programador y un ingeniero de sistemas capacitado para crear cualquier cosa que mi imaginación me proponga.
+    </p>
 
-    <picture>
+    <!-- Imagen de portada (encabezado) -->
+    <figure class="fig-portada">
+      <img src="cap.jpg" alt="Foto de portada de mi mini web" class="imagen-redonda" loading="lazy">
+      <figcaption class="fig-caption">Mi mini web — día 10</figcaption>
+    </figure>
+  </div>
+
+  <!-- Imagen responsive con picture -->
+  <picture>
     <source srcset="img/cap-800.webp 800w, img/cap-400.webp 400w" type="image/webp">
     <source srcset="img/cap-1200.jpg 1200w, img/cap-800.jpg 800w" type="image/jpeg">
     <img src="img/cap-800.jpg" alt="Cap" loading="lazy" style="width:100%; max-width:420px; display:block; margin:auto; border-radius:8px;">
-    </picture>
+  </picture>
 
+  <!-- Ejemplo de fila de formulario (inputs reales) -->
+  <div class="form-row" style="max-width:900px; margin:20px auto; gap:12px; display:flex; flex-wrap:wrap;">
+    <div class="col" style="flex:1; min-width:200px;">
+      <input type="text" name="ejemplo1" placeholder="Campo ejemplo 1" style="width:100%; padding:8px;">
+    </div>
+    <div class="col" style="flex:1; min-width:200px;">
+      <input type="text" name="ejemplo2" placeholder="Campo ejemplo 2" style="width:100%; padding:8px;">
+    </div>
+  </div>
 
-    <div class="form-row">
-    <div class="col"><input ...></div>
-    <div class="col"><input ...></div>
+  <hr>
+
+  <div class="sobre-mi">
+    <div class="video-wrapper">
+      <div class="video-inner">
+        <iframe src="https://www.youtube.com/embed/dbK8oiPIcPo"
+                title="Video ejemplo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
     </div>
 
+    <h2>Tres metas de este año:</h2>
+    <ol>
+      <li>Ser el mejor programador</li>
+      <li>Ser más disciplinado</li>
+      <li>Conseguir empleo en tecnología haciendo lo que me apasiona</li>
+    </ol>
 
-    <hr>
-    <div class="sobre-mi">
-        <div class="video-wrapper">
-        <div class="video-inner">
-            <iframe src="https://www.youtube.com/embed/dbK8oiPIcPo"
-                    title="Video ejemplo"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-        </div>
-        </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ASIGNATURA</th>
+          <th>DÍA</th>
+          <th>HORA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Matemáticas</td>
+          <td>Lunes</td>
+          <td>7:00 AM</td>
+        </tr>
+        <tr>
+          <td>Recreo</td>
+          <td>Lunes</td>
+          <td>9:30 AM</td>
+        </tr>
+        <tr>
+          <td>Inglés</td>
+          <td>Lunes</td>
+          <td>10:00 AM</td>
+        </tr>
+        <tr>
+          <td>Almuerzo</td>
+          <td>Lunes</td>
+          <td>12:30 PM</td>
+        </tr>
+        <tr>
+          <td>Biología</td>
+          <td>Lunes</td>
+          <td>1:00 PM</td>
+        </tr>
+      </tbody>
+    </table>
 
-        <h2>Tres metas de este año:</h2>
-        <ol>
-            <li>Ser el mejor programador</li>
-            <li>Ser mas discipinado</li>
-            <li>Conseguir empleo en el campo de la tecnologia haciendo lo que me apasiona</li>
-        </ol>
-        
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ASIGNATURA</th>
-                    <th>DÍA</th>
-                    <th>HORA</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Matématicas</td>
-                    <td>Lunes</td>
-                    <td>7:00 AM</td>
-                </tr>
-                <tr>
-                    <td>Recreo</td>
-                    <td>Lunes</td>
-                    <td>9:30 AM</td>
-                </tr>
-                <tr>
-                    <td>Inglés</td>
-                    <td>Lunes</td>
-                    <td>10:00 AM</td>
-                </tr>
-                <tr>
-                    <td>Almuerzo</td>
-                    <td>Lunes</td>
-                    <td>12:30 PM</td>
-                </tr>
-                <tr>
-                    <td>Biología</td>
-                    <td>Lunes</td>
-                    <td>1:00 PM</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <p class="link">
-            Visita <a href="../retoDia10/biografia/index.html" target="_blank">Mi biografia</a>para mas información 
-            <br>
-            visita <a href="../retoDia10/biografia/biografia.html" target="_blank">Mi segunda Biografia</a> para mas información
-        </p>
+    <p class="link" style="text-align:center;">
+      Visita <a href="biografia/index.html" target="_blank">Mi biografía</a> para más información.
+      <br>
+      Visita <a href="biografia/biografia.html" target="_blank">Mi segunda Biografía</a> para más información.
+    </p>
 
-        <div class="social">
-            <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Ir a GitHub">🐙 GitHub</a>
-            <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Ir a LinkedIn">💼 LinkedIn</a>
-            <a href="mailto:tuemail@ejemplo.com" aria-label="Enviar correo">✉️ Email</a>
-        </div>
-
+    <div class="social" style="text-align:center; margin-top:12px;">
+      <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Ir a GitHub">🐙 GitHub</a>
+      <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Ir a LinkedIn">💼 LinkedIn</a>
+      <a href="mailto:tuemail@ejemplo.com" aria-label="Enviar correo">✉️ Email</a>
     </div>
-    <hr>
-    <div class="contacto" id="contacto">
-        <div class="encabezadoD">
-            <h2>CONTACTO</h2>
-            <b>Complete el siguiente formulario para contactarme</b>
-        </div>
-       <div class="formularioD">
-        <form action="#">
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre aqui" required>
-            <br><br>
-            <label for="correo">Correo:</label>
-            <input type="email" name="correo" id="correo" placeholder="ejemplo@correo.com" required>
-            <br><br>
-            <label for="mensaje">Mensaje:</label>
-            <textarea name="mensaje" id="mensaje" placeholder="ingresa un mensaje" rows="4" cols="30" required></textarea>
-            <br><br>
-            <label>
-                <input type="checkbox" name="terminos" id="terminos"> Acepto los términos y condiciones
-            </label>
-            <br><br>
-            <button type="submit">Enviar</button>
-        </form>
-       </div>
-       <div class="audio">
-            <h3>Audio</h3>
-            <audio controls preload="none">
-                <source src="../retoDia10/audio/videoplayback.weba"audio/mpeg">
-                Tu navegador no soporta el reproductor de audio.
-            </audio>
-        </div>
+
+  </div>
+
+  <hr>
+
+  <!-- CONTACTO -->
+  <div class="contacto" id="contacto">
+    <div class="encabezadoD">
+      <h2>CONTACTO</h2>
+      <b>Complete el siguiente formulario para contactarme</b>
     </div>
-        <script>
-        function toggleMenu() {
-            const links = document.querySelector('.nav-links');
-            if (links) links.classList.toggle('show');
-        }
 
-        // (Opcional) marcar el link activo según la URL
-        document.addEventListener('DOMContentLoaded', () => {
-            const enlaces = document.querySelectorAll('.nav-links a');
-            enlaces.forEach(a => {
-            if (location.pathname.endsWith(a.getAttribute('href')) || location.href.includes(a.getAttribute('href'))) {
-                a.classList.add('active');
-            }
-            });
-        });
-    </script>
-    <script>
-        const menuBtn = document.getElementById("menu-btn");
-        const navMenu = document.getElementById("nav-menu");
+    <div class="formularioD">
+      <form action="#" id="contactoForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre aquí" required>
+        <br><br>
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" id="correo" placeholder="ejemplo@correo.com" required>
+        <br><br>
+        <label for="mensaje">Mensaje:</label>
+        <textarea name="mensaje" id="mensaje" placeholder="ingresa un mensaje" rows="4" required></textarea>
+        <br><br>
+        <label>
+          <input type="checkbox" name="terminos" id="terminos"> Acepto los términos y condiciones
+        </label>
+        <br><br>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
 
+    <div class="audio" style="text-align:center; margin-top:12px;">
+      <h3>Audio</h3>
+      <audio controls preload="none">
+        <!-- reemplaza la ruta por tu archivo real, por ejemplo audio/mi-audio.mp3 -->
+        <source src="audio/mi-audio.mp3" type="audio/mpeg">
+        Tu navegador no soporta el reproductor de audio.
+      </audio>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Menú hamburguesa (seguro: comprueba existencia de elementos)
+    (function() {
+      const menuBtn = document.getElementById("menu-btn");
+      const navMenu = document.getElementById("nav-menu");
+      if (menuBtn && navMenu) {
         menuBtn.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
+          navMenu.classList.toggle("active");
         });
-    </script>
+      }
+    })();
+  </script>
 
-    <script>
+  <script>
     // Efecto scroll reveal
     function revealElements() {
-        const elements = document.querySelectorAll(".reveal");
-        for (let i = 0; i < elements.length; i++) {
+      const elements = document.querySelectorAll(".reveal");
+      for (let i = 0; i < elements.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = elements[i].getBoundingClientRect().top;
         const visiblePoint = 100;
-
         if (elementTop < windowHeight - visiblePoint) {
-            elements[i].classList.add("active");
+          elements[i].classList.add("active");
         } else {
-            elements[i].classList.remove("active");
+          elements[i].classList.remove("active");
         }
-        }
+      }
     }
+    window.addEventListener("scroll", revealElements);
+    // Ejecutar inicialmente para elementos ya visibles
+    document.addEventListener("DOMContentLoaded", revealElements);
+  </script>
 
-         window.addEventListener("scroll", revealElements);
-    </script>
-
-    <!-- 🔝 Botón flotante moderno -->
-    <button id="btnSubir" aria-label="Subir al inicio">
+  <!-- 🔝 Botón flotante moderno -->
+  <button id="btnSubir" aria-label="Subir al inicio" type="button" onclick="subirArriba()">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="white">
-        <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+      <path d="M12 4l-8 8h5v8h6v-8h5z"/>
     </svg>
-    </button>
+  </button>
 
-    <script>
-  // 🔝 Mostrar/Ocultar botón al hacer scroll
-  const btnSubir = document.getElementById("btnSubir");
+  <script>
+    // Mostrar/Ocultar botón al hacer scroll y función subir
+    (function() {
+      const btnSubir = document.getElementById("btnSubir");
+      if (!btnSubir) return;
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          btnSubir.classList.add("mostrar");
+        } else {
+          btnSubir.classList.remove("mostrar");
+        }
+      });
+    })();
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      btnSubir.classList.add("mostrar");
-    } else {
-      btnSubir.classList.remove("mostrar");
+    function subirArriba() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
-  });
-
-  // 🔼 Función para volver arriba suavemente
-  function subirArriba() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
-</script>
-
+  </script>
 
 </body>
 </html>
