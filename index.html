@@ -103,6 +103,11 @@
     <p>Descripción corta del proyecto 3.</p>
     <a class="btn" href="#">Ver</a>
   </article>
+
+  <article class="card" data-order="1">...</article>
+<article class="card" data-order="2">...</article>
+<article class="card" data-order="3">...</article>
+
 </section>
 
 
@@ -340,6 +345,17 @@
     });
   })();
 </script>
+
+
+    <script>
+  (function() {
+    const cards = document.querySelectorAll('.cards-grid .card');
+    cards.forEach((c, i) => {
+      c.style.animationDelay = (i * 0.08) + 's';
+    });
+  })();
+</script>
+
 
 
 </body>
