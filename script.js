@@ -54,6 +54,19 @@ function revealElements() {
 window.addEventListener("scroll", revealElements);
 window.addEventListener("load", revealElements);
 
+// IntersectionObserver para .reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.18 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+
 // =============================
 // 🌗 MODO OSCURO
 // =============================
@@ -82,3 +95,66 @@ window.addEventListener("DOMContentLoaded", () => {
     if (themeSwitch) themeSwitch.textContent = "☀️ Modo Claro";
   }
 });
+
+
+// animar skill-fill cuando aparecen
+const skillEls = document.querySelectorAll('.skill-fill');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.width = getComputedStyle(e.target).getPropertyValue('--w');
+      obs.unobserve(e.target);
+    }
+  });
+},{ threshold: 0.4 });
+
+skillEls.forEach(el => obs.observe(el));
+
+
+// Enviar formulario con fetch + validar simple
+const contactForm = document.getElementById('contactForm');
+const contactMsg = document.getElementById('contactMsg');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // validación simple
+    const nombre = contactForm.nombre.value.trim();
+    const email = contactForm.email.value.trim();
+    const mensaje = contactForm.mensaje.value.trim();
+
+    if (!nombre || !email || !mensaje) {
+      contactMsg.textContent = 'Por favor completa todos los campos.';
+      contactMsg.style.color = 'crimson';
+      return;
+    }
+
+    contactMsg.textContent = 'Enviando...';
+    contactMsg.style.color = '';
+
+    const formData = new FormData(contactForm);
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+    // después de respuesta:
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Enviar';
+
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        contactMsg.textContent = '¡Mensaje enviado! Gracias — te responderé pronto.';
+        contactForm.reset();
+      } else {
+        contactMsg.textContent = 'Ocurrió un error, intenta de nuevo más tarde.';
+      }
+    } catch (err) {
+      contactMsg.textContent = 'Error de red, revisa tu conexión.';
+    }
+  });
+}

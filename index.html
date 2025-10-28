@@ -6,6 +6,10 @@
   <title>Portafolio | Alexander Trochez</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preload" as="image" href="img/hero-1200.jpg">
+
 </head>
 <body>
 
@@ -42,7 +46,57 @@
       Soy un apasionado por la tecnología, el desarrollo web y la creación de soluciones digitales que generen impacto.  
       Me gusta mantenerme en constante aprendizaje y mejorar mis habilidades en programación, diseño y arquitectura de software.
     </p>
-    <img src="img/perfil.jpg" alt="Foto de Alexander" class="imagen-redonda">
+
+        <img src="img/perfil.jpg" alt="Foto de Alexander" class="imagen-redonda" loading="lazy">
+
+
+    <section id="habilidades" class="sobre-mi reveal">
+  <h2>Habilidades</h2>
+  <div class="skill">
+    <div class="skill-head">
+      <strong>HTML & CSS</strong><span>90%</span>
+    </div>
+    <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-head">
+      <strong>JavaScript</strong><span>75%</span>
+    </div>
+    <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-head">
+      <strong>Bases de datos</strong><span>60%</span>
+    </div>
+    <div class="skill-bar"><div class="skill-fill" style="--w:60%"></div></div>
+  </div>
+</section>
+
+        <section id="experiencia" class="sobre-mi reveal">
+  <h2>Educación & Experiencia</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="time">2022 - Presente</div>
+      <div class="content">
+        <h3>Ing. de Sistemas — Universidad X</h3>
+        <p>Curso: Desarrollo de software, bases de datos, redes.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="time">2021</div>
+      <div class="content">
+        <h3>Prácticas — Empresa Y</h3>
+        <p>Mantenimiento de sistemas y soporte técnico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   </section>
 
   <!-- 🔹 Proyectos -->
@@ -71,7 +125,7 @@
   <!-- 🔹 Contacto -->
   <section id="contacto" class="contacto reveal">
     <h2>Contáctame</h2>
-    <form action="https://formspree.io/f/mqakwdqd" method="POST">
+    <form id="contactForm" action="https://formspree.io/f/mqakwdqd" method="POST">
       <div class="form-row">
         <div class="col">
           <label for="nombre">Nombre</label>
@@ -86,6 +140,11 @@
       <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
       <button type="submit" class="btn">Enviar</button>
     </form>
+    <div id="contactMsg" aria-live="polite" style="text-align:center; margin-top:12px;"></div>
+
+    <input id="email" name="email" type="email" aria-describedby="emailHelp" required>
+    <small id="emailHelp" class="sr-only">Escribe tu correo</small>
+
   </section>
 
   <!-- 🔹 Footer -->
@@ -98,6 +157,6 @@
 
 
   <!-- 🔹 Scripts -->
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
