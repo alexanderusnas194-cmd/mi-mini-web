@@ -425,3 +425,111 @@ button {
   background-color: var(--color-primario);
   color: var(--color-blanco);
 }
+
+/* ===========================================
+   🌗 MODO OSCURO
+=========================================== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode nav {
+  background: #1e1e1e;
+}
+
+body.dark-mode a {
+  color: #f0f0f0;
+}
+
+body.dark-mode .card {
+  background-color: #1c1c1c;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #0f0f0f, #232323);
+}
+
+/* 🌙 Botón para cambiar modo */
+.theme-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #0b3d91;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-switch:hover {
+  background: #092c6a;
+  transform: scale(1.05);
+}
+
+/* ===========================================
+   🔝 BOTÓN SUBIR ARRIBA
+=========================================== */
+#btnSubir {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #0b3d91;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 999;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#btnSubir:hover {
+  transform: translateY(-5px);
+  background-color: #092c6a;
+}
+
+#btnSubir.mostrar {
+  display: block;
+  opacity: 1;
+}
+
+/* ===========================================
+   ✨ ANIMACIONES & SCROLL REVEAL
+=========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================================
+   🪄 EFECTOS SUAVES Y DETALLES
+=========================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+a {
+  transition: all 0.3s ease;
+}
+
+button:active,
+a:active {
+  transform: scale(0.97);
+}
