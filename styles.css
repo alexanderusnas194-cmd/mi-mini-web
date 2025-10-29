@@ -8,16 +8,20 @@
   --shadow: 0 8px 24px rgba(3,3,56,0.08);
   --ff-main: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
 }
-body { font-family: var(--ff-main); background: var(--bg); color: var(--text); }
+body { 
+  font-family: var(--ff-main);
+   background: var(--bg); 
+   color: var(--text); 
+  }
 
 
 /* 🌙 Modo oscuro y claro automático */
 :root {
-  --color-fondo: #f4f4f4;
+  --color-fondo: #f9f9f9;
   --color-texto: #222;
   --color-primario: #0057ff;
   --color-secundario: #006aff;
-  --color-blanco: #fff;
+  --color-blanco: #ffffff15;
   --color-sombra: rgba(0, 0, 0, 0.1);
   --transicion: 0.3s ease;
 }
@@ -95,17 +99,52 @@ body {
   color: var(--color-texto);
 }
 
-/* 🔹 Sección Hero */
+/* 🌟 HERO UNIVERSAL (funciona en ambos modos) */
 .hero {
+  background-image: url('img/hero-1200.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 90vh;
+  align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
   color: white;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
 }
 
+/* 🔹 Capa de oscurecimiento */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* tono neutro */
+  z-index: 0;
+  transition: background 0.5s ease;
+}
+
+/* 🔹 Contenido */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+/* 🔹 En modo claro, aclaramos un poco la capa para que no tape la imagen */
+body.light-mode .hero::before {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* 🔹 En modo oscuro, oscurecemos más la capa para mejor contraste */
+body.dark-mode .hero::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* 🔹 Textos */
 .hero h1 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
@@ -113,36 +152,35 @@ body {
 
 .hero p {
   font-size: 1.3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.resaltado {
-  color: yellow;
-}
-
-.btn {
-  background-color: var(--color-blanco);
-  color: var(--color-primario);
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 25px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transicion);
+/* 🔹 Botón principal */
+.hero .btn {
+  background-color: #00bfff;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
   text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
 }
 
-.btn:hover {
-  background-color: var(--color-primario);
-  color: var(--color-blanco);
+.hero .btn:hover {
+  background-color: #007acc;
 }
 
-.btn-small {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
+
+/* 🔹 Responsivo */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
 }
+
 
 /* 🔹 Sección Sobre mí */
 .sobre-mi {
@@ -222,19 +260,17 @@ form label {
   font-weight: 600;
 }
 
-form input,
-form textarea {
+form input,form textarea {
   width: 100%;
   padding: 0.7rem;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc9a;
   border-radius: 8px;
   outline: none;
   transition: border var(--transicion);
 }
 
-form input:focus,
-form textarea:focus {
+form input:focus, form textarea:focus {
   border-color: var(--color-primario);
 }
 
@@ -401,7 +437,7 @@ footer {
   }
 }
 
-/* 🔹 Transición suave en los enlaces */
+/*  Transición suave en los enlaces */
 a,
 button {
   transition: all 0.3s ease;
@@ -419,7 +455,7 @@ button {
   transform: translateY(0);
 }
 
-/* 🔹 Modo oscuro Toggle */
+/*  Modo oscuro Toggle */
 .theme-switch {
   position: absolute;
   right: 20px;
@@ -461,11 +497,7 @@ body.dark-mode .card {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
-body.dark-mode .hero {
-  background: linear-gradient(135deg, #0f0f0f, #232323);
-}
-
-/* 🌙 Botón para cambiar modo */
+/*  Botón para cambiar modo */
 .theme-switch {
   position: fixed;
   top: 25px;
@@ -576,15 +608,36 @@ nav .theme-switch:hover {
   transition: width .8s cubic-bezier(.2,.9,.2,1);
 }
 
-.timeline { max-width:900px; margin: 20px auto; }
-.timeline-item { display:flex; gap:16px; margin: 12px 0; align-items:flex-start; }
+.timeline {
+   max-width:900px; 
+   margin: 20px auto; 
+  }
+.timeline-item {
+   display:flex; 
+   gap:16px; 
+   margin: 12px 0; 
+   align-items:flex-start; 
+  }
 .timeline-item .time {
-  min-width:110px; color:var(--muted); font-weight:600;
+  min-width:120px; 
+  color:var(--muted); 
+  font-weight:600;
 }
-.timeline-item .content { background:var(--color-blanco); padding:12px 14px; border-radius:10px; box-shadow:var(--shadow); }
-
+.timeline-item .content {
+  background:var(--color-blanco); 
+  padding:12px 14px; 
+  border-radius:10px; 
+  box-shadow:var(--shadow); 
+}
 
 .sr-only {
   position:absolute!important;
-  width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
 }
