@@ -1,41 +1,37 @@
-:root{
-  --bg: #f7f8fb;
-  --text: #1f2a44;
-  --primary: #0b3d91;
-  --accent: #1e8f3e;
-  --muted: #9aa4b2;
-  --radius: 12px;
-  --shadow: 0 8px 24px rgba(3,3,56,0.08);
-  --ff-main: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
-}
-body { 
-  font-family: var(--ff-main);
-   background: var(--bg); 
-   color: var(--text); 
-  }
-
-
-/* 🌙 Modo oscuro y claro automático */
+/* ===========================
+   VARIABLES GLOBALES
+=========================== */
 :root {
-  --color-fondo: #f9f9f9;
+  /* Colores base */
+  --color-fondo: #f4f4f4;
   --color-texto: #222;
   --color-primario: #0057ff;
   --color-secundario: #006aff;
-  --color-blanco: #ffffff15;
-  --color-sombra: rgba(0, 0, 0, 0.1);
+  --color-blanco: #ffffff;
+
+  /* Overlays para hero */
+  --overlay-dark: rgba(0, 0, 0, 0.45);
+  --overlay-light: rgba(255, 255, 255, 0.25);
+  --overlay-dark-mode: rgba(0, 0, 0, 0.6);
+
+  /* Tipografía y efectos */
   --transicion: 0.3s ease;
+  --font-size-h1: 3rem;
+  --font-size-p: 1.3rem;
 }
 
+/* Modo oscuro */
 [data-theme="dark"] {
   --color-fondo: #1e1e1e;
   --color-texto: #f5f5f5;
   --color-primario: #1e90ff;
   --color-secundario: #3399ff;
   --color-blanco: #2a2a2a;
-  --color-sombra: rgba(255, 255, 255, 0.1);
 }
 
-/* Reset básico */
+/* ===========================
+   RESET BÁSICO
+=========================== */
 * {
   margin: 0;
   padding: 0;
@@ -51,14 +47,16 @@ body {
   transition: background-color var(--transicion), color var(--transicion);
 }
 
-/* 🔹 Navegación */
+/* ===========================
+   NAVEGACIÓN
+=========================== */
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: var(--color-blanco);
-  box-shadow: 0 2px 5px var(--color-sombra);
+  box-shadow: 0 2px 5px var(--overlay-dark);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -89,7 +87,6 @@ body {
   color: var(--color-primario);
 }
 
-/* Botón modo móvil */
 .nav-toggle {
   display: none;
   background: none;
@@ -99,34 +96,61 @@ body {
   color: var(--color-texto);
 }
 
-/* 🌟 HERO UNIVERSAL (funciona en ambos modos) */
+/*-------------------------------------------------------------------------------------------------*/
+
+/* ===========================
+   HERO SECTION
+=========================== */
 .hero {
-  background-image: url('img/hero-1200.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('img/hero-1200.webp') center/cover no-repeat;
   height: 100vh;
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  color: var(--color-blanco);
   text-align: center;
-  color: white;
+  padding: 2rem;
+
   position: relative;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all var(--transicion);
 }
 
-/* 🔹 Capa de oscurecimiento */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* tono neutro */
+  background: var(--overlay-dark);
   z-index: 0;
-  transition: background 0.5s ease;
+  transition: background var(--transicion);
 }
 
-/* 🔹 Contenido */
+[data-theme="dark"] .hero::before {
+  background: var(--overlay-dark-mode);
+}
+
+[data-theme="light"] .hero::before {
+  background: var(--overlay-light);
+}
+
+.hero h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: var(--font-size-p);
+  margin-bottom: 2rem;
+}
+
+.hero .resaltado {
+  color: var(--color-primario);
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
@@ -134,44 +158,50 @@ body {
   padding: 2rem;
 }
 
-/* 🔹 En modo claro, aclaramos un poco la capa para que no tape la imagen */
-body.light-mode .hero::before {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-/* 🔹 En modo oscuro, oscurecemos más la capa para mejor contraste */
-body.dark-mode .hero::before {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-/* 🔹 Textos */
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-}
-
-/* 🔹 Botón principal */
+/* ===========================
+   BOTONES
+=========================== */
 .hero .btn {
-  background-color: #00bfff;
-  color: white;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
   padding: 0.8rem 1.6rem;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.3s;
+  transition: background var(--transicion);
 }
 
 .hero .btn:hover {
-  background-color: #007acc;
+  background-color: var(--color-secundario);
 }
 
+.btn {
+  background-color: var(--color-blanco);
+  color: var(--color-primario);
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transicion);
+  text-decoration: none;
+}
 
-/* 🔹 Responsivo */
+.btn:hover {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.btn-small {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
@@ -181,6 +211,7 @@ body.dark-mode .hero::before {
   }
 }
 
+/*--------------------------------------------------------------------------------------------------*/
 
 /* 🔹 Sección Sobre mí */
 .sobre-mi {
@@ -260,17 +291,19 @@ form label {
   font-weight: 600;
 }
 
-form input,form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 0.7rem;
   margin-bottom: 1rem;
-  border: 1px solid #cccccc9a;
+  border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
   transition: border var(--transicion);
 }
 
-form input:focus, form textarea:focus {
+form input:focus,
+form textarea:focus {
   border-color: var(--color-primario);
 }
 
@@ -437,7 +470,7 @@ footer {
   }
 }
 
-/*  Transición suave en los enlaces */
+/* 🔹 Transición suave en los enlaces */
 a,
 button {
   transition: all 0.3s ease;
@@ -455,7 +488,7 @@ button {
   transform: translateY(0);
 }
 
-/*  Modo oscuro Toggle */
+/* 🔹 Modo oscuro Toggle */
 .theme-switch {
   position: absolute;
   right: 20px;
@@ -497,7 +530,11 @@ body.dark-mode .card {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
-/*  Botón para cambiar modo */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #0f0f0f, #232323);
+}
+
+/* 🌙 Botón para cambiar modo */
 .theme-switch {
   position: fixed;
   top: 25px;
@@ -608,36 +645,15 @@ nav .theme-switch:hover {
   transition: width .8s cubic-bezier(.2,.9,.2,1);
 }
 
-.timeline {
-   max-width:900px; 
-   margin: 20px auto; 
-  }
-.timeline-item {
-   display:flex; 
-   gap:16px; 
-   margin: 12px 0; 
-   align-items:flex-start; 
-  }
+.timeline { max-width:900px; margin: 20px auto; }
+.timeline-item { display:flex; gap:16px; margin: 12px 0; align-items:flex-start; }
 .timeline-item .time {
-  min-width:120px; 
-  color:var(--muted); 
-  font-weight:600;
+  min-width:110px; color:var(--muted); font-weight:600;
 }
-.timeline-item .content {
-  background:var(--color-blanco); 
-  padding:12px 14px; 
-  border-radius:10px; 
-  box-shadow:var(--shadow); 
-}
+.timeline-item .content { background:var(--color-blanco); padding:12px 14px; border-radius:10px; box-shadow:var(--shadow); }
+
 
 .sr-only {
   position:absolute!important;
-  width:1px;
-  height:1px;
-  padding:0;
-  margin:-1px;
-  overflow:hidden;
-  clip:rect(0 0 0 0);
-  white-space:nowrap;
-  border:0;
+  width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
 }
