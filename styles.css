@@ -426,6 +426,19 @@ footer {
 
   .nav-toggle {
     display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+
+  }
+
+  .theme-switch {
+    position: absolute;
+    top: 15px;
+    right: 70px;
+    z-index: 999;
+
   }
 
   .nav-links a {
@@ -460,10 +473,18 @@ footer {
 }
 
 /* Pantallas muy pequeñas (celulares antiguos o plegables) */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .nav-links {
     width: 80%;
   }
+  
+  .nav-toggle {
+    position: absolute;
+    top: 15px;      /* distancia desde arriba */
+    right: 15px;    /* esquina derecha */
+    z-index: 1000;  /* para que quede encima */
+  }
+
 
   .hero h1 {
     font-size: 1.8rem;
@@ -499,9 +520,9 @@ button {
 
 /* 🔹 Modo oscuro Toggle */
 .theme-switch {
-  position: absolute;
+ /* position: absolute;
   right: 20px;
-  top: 15px;
+  top: 15px;*/
   cursor: pointer;
   background: none;
   border: 2px solid var(--color-primario);
