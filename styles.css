@@ -4,10 +4,12 @@
 :root {
   /* Colores base */
   --color-fondo: #f4f4f4;
+  --color-bar-bg: #e0e0e0;
   --color-texto: #222;
   --color-primario: #0057ff;
-  --color-secundario: #006aff;
+  --color-secundario: #006aff, #00bfff;
   --color-blanco: #ffffff;
+
 
   /* Overlays para hero */
   --overlay-dark: rgba(0, 0, 0, 0.45);
@@ -18,6 +20,13 @@
   --transicion: 0.3s ease;
   --font-size-h1: 3rem;
   --font-size-p: 1.3rem;
+}
+
+body.dark-mode {
+  --color-primario: #6a11cb; /* morado */
+  --color-secundario: #2575fc; /* azul eléctrico */
+  --color-bar-bg: #222;
+  --color-texto: #f0f0f0;
 }
 
 /* Modo oscuro */
@@ -533,6 +542,15 @@ body.dark-mode .card {
 body.dark-mode .hero {
   background: linear-gradient(135deg, #0f0f0f, #232323);
 }
+body.dark-mode .skill-bar {
+  background: #333; /* más oscuro para contraste */
+}
+
+body.dark-mode .skill-head strong,
+body.dark-mode .skill-head span {
+  color: #e6e6e6; /* texto más claro para verse bien */
+}
+
 
 /* 🌙 Botón para cambiar modo */
 .theme-switch {
@@ -633,27 +651,70 @@ nav .theme-switch:hover {
   background: #0b3d91;
 }
 
-.skill { max-width:800px; margin: 12px auto; }
-.skill-head { display:flex; justify-content:space-between; margin-bottom:6px; font-weight:600; }
-.skill-bar { background:#eceff5; border-radius:999px; height:12px; overflow:hidden; }
-.skill-fill {
-  height:100%;
-  width: var(--w, 60%);
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  border-radius:999px;
-  transform-origin:left;
-  transition: width .8s cubic-bezier(.2,.9,.2,1);
+/* 🎯 Sección de habilidades */
+.skill { 
+  max-width: 800px; 
+  margin: 12px auto; 
 }
 
-.timeline { max-width:900px; margin: 20px auto; }
-.timeline-item { display:flex; gap:16px; margin: 12px 0; align-items:flex-start; }
-.timeline-item .time {
-  min-width:110px; color:var(--muted); font-weight:600;
+.skill-head {
+  display: flex; 
+  justify-content: space-between; 
+  margin-bottom: 6px; 
+  font-weight: 600;
+  color: var(--color-texto);
 }
-.timeline-item .content { background:var(--color-blanco); padding:12px 14px; border-radius:10px; box-shadow:var(--shadow); }
+
+/* 🧱 Fondo de la barra */
+.skill-bar { 
+  background: var(--color-bar-bg);
+  border-radius: 999px; 
+  height: 12px; 
+  overflow: hidden;
+}
+
+/* 🌈 Barra de progreso */
+.skill-fill {
+  height: 100%;
+  width: 0; /* inicia vacía */
+  background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
+  border-radius: 999px;
+  transform-origin: left;
+  transition: width .8s cubic-bezier(.2, .9, .2, 1);
+}
+
+
+.timeline { 
+  max-width:900px; 
+  margin: 20px auto; 
+}
+.timeline-item {
+   display:flex; 
+   gap:16px; 
+   margin: 12px 0; 
+   align-items:flex-start; 
+  }
+.timeline-item .time {
+  min-width:110px; 
+  color:var(--muted); 
+  font-weight:600;
+}
+.timeline-item .content {
+  background:var(--color-blanco); 
+  padding:12px 14px; 
+  border-radius:10px; 
+  box-shadow:var(--shadow); 
+}
 
 
 .sr-only {
   position:absolute!important;
-  width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
 }
