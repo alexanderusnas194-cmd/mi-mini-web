@@ -44,6 +44,6 @@ Durante este proyecto reforcé mis conocimientos en:
 
 ## Contacto
 
-📧 [alexander.tu-correo@example.com](mailto:alexander.tu-correo@example.com)
+📧 [alexanderusnas194@gmail.com](mailto:alexanderusnas194@gmail.com)
 
-💻 Visita el sitio: [https://tuusuario.github.io/portafolio](https://tuusuario.github.io/portafolio)
+💻 Visita el sitio: [https://alexanderusnas194-cmd.github.io/mi-mini-web/](https://alexanderusnas194-cmd.github.io/mi-mini-web/)
