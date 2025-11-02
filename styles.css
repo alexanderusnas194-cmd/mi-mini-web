@@ -222,7 +222,7 @@ body {
 
 /*--------------------------------------------------------------------------------------------------*/
 
-/* 🔹 Sección Sobre mí */
+/*  Sección Sobre mí */
 .sobre-mi {
   padding: 5rem 10%;
   text-align: center;
@@ -250,7 +250,7 @@ body {
   border: 3px solid var(--color-primario);
 }
 
-/* 🔹 Sección Proyectos */
+/*  Sección Proyectos */
 .cards-section {
   padding: 5rem 10%;
   background-color: var(--color-blanco);
@@ -275,7 +275,7 @@ body {
   transform: translateY(-8px);
 }
 
-/* 🔹 Contacto */
+/*  Contacto */
 .contacto {
   padding: 5rem 10%;
 }
@@ -604,7 +604,7 @@ body.dark-mode .skill-head span {
 }
 
 /* ===========================================
-   ✨ ANIMACIONES & SCROLL REVEAL
+    ANIMACIONES & SCROLL REVEAL
 =========================================== */
 .reveal {
   opacity: 0;
@@ -618,7 +618,7 @@ body.dark-mode .skill-head span {
 }
 
 /* ===========================================
-   🪄 EFECTOS SUAVES Y DETALLES
+    EFECTOS SUAVES Y DETALLES
 =========================================== */
 html {
   scroll-behavior: smooth;
@@ -651,7 +651,7 @@ nav .theme-switch:hover {
   background: #0b3d91;
 }
 
-/* 🎯 Sección de habilidades */
+/*  Sección de habilidades */
 .skill { 
   max-width: 800px; 
   margin: 12px auto; 
@@ -665,7 +665,7 @@ nav .theme-switch:hover {
   color: var(--color-texto);
 }
 
-/* 🧱 Fondo de la barra */
+/*  Fondo de la barra */
 .skill-bar { 
   background: var(--color-bar-bg);
   border-radius: 999px; 
@@ -673,7 +673,7 @@ nav .theme-switch:hover {
   overflow: hidden;
 }
 
-/* 🌈 Barra de progreso */
+/*  Barra de progreso */
 .skill-fill {
   height: 100%;
   width: 0; /* inicia vacía */

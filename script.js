@@ -1,5 +1,5 @@
 // =============================
-// 🌐 MENÚ RESPONSIVE
+//  MENÚ RESPONSIVE
 // =============================
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.getElementById("navLinks");
@@ -11,7 +11,7 @@ if (navToggle && navLinks) {
 }
 
 // =============================
-// 🔝 BOTÓN SUBIR
+//  BOTÓN SUBIR
 // =============================
 const btnSubir = document.getElementById("btnSubir");
 
@@ -26,7 +26,7 @@ if (btnSubir) {
 }
 
 // =============================
-// ✨ EFECTO REVEAL
+//  EFECTO REVEAL
 // =============================
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -40,7 +40,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // =============================
-// 🌗 CAMBIO DE TEMA
+//  CAMBIO DE TEMA
 // =============================
 const themeSwitch = document.querySelector(".theme-switch");
 
@@ -65,7 +65,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // =============================
-// 📊 ANIMAR BARRAS DE HABILIDADES
+//  ANIMAR BARRAS DE HABILIDADES
 // =============================
 const skillEls = document.querySelectorAll('.skill-fill');
 const skillObserver = new IntersectionObserver((entries) => {
@@ -80,7 +80,7 @@ const skillObserver = new IntersectionObserver((entries) => {
 skillEls.forEach(el => skillObserver.observe(el));
 
 // =============================
-// 📧 FORMULARIO DE CONTACTO
+//  FORMULARIO DE CONTACTO
 // =============================
 const contactForm = document.getElementById('contactForm');
 const contactMsg = document.getElementById('contactMsg');
