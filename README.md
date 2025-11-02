@@ -42,6 +42,17 @@ Durante este proyecto reforcé mis conocimientos en:
 
 ---
 
+## Retos 
+
+Durante el transcurso del tiempo quiero implementar:
+- Nuevas aplicaciones web
+- Una aplicacion JAVA
+- Una aplicacion en Android Studio
+- Ciberseguridad
+- Entre otros...
+
+
+---
 ## Contacto
 
 📧 [alexanderusnas194@gmail.com](mailto:alexanderusnas194@gmail.com)
